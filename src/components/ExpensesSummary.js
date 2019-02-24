@@ -7,17 +7,19 @@ import numeral from 'numeral'
 export const ExpensesSummary = (props) => {
     const expenseCount = props.expenses.length
     const expensesTotal = selectExpensesTotal(props.expenses)
+    const formattedValue = numeral(expensesTotal / 100).format('$0,0.00')
     
     return (
         <div>
-            {expenseCount > 0 && <p>Viewing {expenseCount} expense{expenseCount > 1 ? 's' : ''} with total value of {numeral(expensesTotal / 100).format('$0,0.00')}</p>}
+            <h1>Viewing {expenseCount} expense{expenseCount !== 1 ? 's' : ''} with total value of {formattedValue}</h1>
         </div>
     )
 }
 
 const mapStateToProps = (state) => {
+    const visibleExpenses = selectExpenses(state.expenses, state.filters)
     return {
-        expenses: selectExpenses(state.expenses, state.filters)
+        expenses: visibleExpenses
     }
 }
 

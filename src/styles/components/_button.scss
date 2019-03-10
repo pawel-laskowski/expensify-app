@@ -1,0 +1,35 @@
+.button {
+    background-color: $blue;
+    color: white;
+    display: inline-block;
+    border: none;
+    border-radius: 2px;
+    font-size: $font-size-large;
+    font-weight: 300;
+    line-height: 1;
+    padding: $s-size;
+    text-decoration: none;
+}
+
+.button:hover {
+    transform: scale(1.01);
+    box-shadow: 0px 0px 10px #000000;
+}
+
+.button--link {
+    background: none;
+}
+
+.button--link:hover {
+    transform: none;
+    box-shadow: none;
+    color: #817c7c;
+}
+
+.button--secondary {
+    background: #888888
+}
+
+.button--secondary:hover {
+    color: red
+}

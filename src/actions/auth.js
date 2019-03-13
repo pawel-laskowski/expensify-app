@@ -5,11 +5,17 @@ export const login = (uid) => ({
     uid
 })
 
-export const startLogin = () => {
+export const startLoginGoogle = () => {
     return () => {
         return firebase.auth().signInWithPopup(googleAuthProvider)
     }
 }
+
+export const startLoginAnonymous = () => {
+    return () => {
+        return firebase.auth().signInAnonymously()  
+    }       
+}  
 
 export const logout = () => ({
     type: 'LOGOUT'

@@ -8,9 +8,16 @@ test('should render LoginPage correctly', () => {
     expect(wrapper).toMatchSnapshot()
 })
 
-test('Should call startLogin on button click', () => {
-    const startLogin = jest.fn()
-    const wrapper = shallow(<LoginPage startLogin={startLogin}/>)
-    wrapper.find('button').simulate('click')
-    expect(startLogin).toHaveBeenCalled()
+test('Should call startLoginGoogle on Login with Google button click', () => {
+    const startLoginGoogle = jest.fn()
+    const wrapper = shallow(<LoginPage startLoginGoogle={startLoginGoogle}/>)
+    wrapper.find('button').at(0).simulate('click')
+    expect(startLoginGoogle).toHaveBeenCalled()
+})
+
+test('Should call startLoginAnonymous on Check as Anonymous button click', () => {
+    const startLoginAnonymous = jest.fn()
+    const wrapper = shallow(<LoginPage startLoginAnonymous={startLoginAnonymous} />)
+    wrapper.find('button').at(1).simulate('click')
+    expect(startLoginAnonymous).toHaveBeenCalled()
 })

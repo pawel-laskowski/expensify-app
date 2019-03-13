@@ -16,9 +16,14 @@ exports[`should render LoginPage correctly 1`] = `
       Get control over your expenses!
     </p>
     <button
-      className="button"
+      className="button button--login"
     >
       Login with Google
+    </button>
+    <button
+      className="button button--login"
+    >
+      Check as Anonymous
     </button>
   </div>
 </div>

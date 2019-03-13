@@ -13,7 +13,7 @@ export class RemoveModal extends React.Component {
             <Modal
                 isOpen={this.props.modalIsOpen}
                 onRequestClose={this.props.closeModal}
-                contentLabel='Selected Option'
+                contentLabel='Remove Modal'
                 closeTimeoutMS={200}
                 className="modal"
                 ariaHideApp={false}

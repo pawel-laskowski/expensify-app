@@ -20,6 +20,22 @@ exports[`should render correctly message for 1 expense 1`] = `
         $1.95
       </span>
     </h1>
+    <h2
+      className="page-header__title "
+    >
+      All expenses: 
+      <span>
+        1
+      </span>
+    </h2>
+    <h2
+      className="page-header__title "
+    >
+      Hidden expenses: 
+      <span>
+        0
+      </span>
+    </h2>
     <div
       className="page-header__actions"
     >
@@ -56,6 +72,22 @@ exports[`should render correctly message for 2 expenses 1`] = `
         $21.45
       </span>
     </h1>
+    <h2
+      className="page-header__title "
+    >
+      All expenses: 
+      <span>
+        2
+      </span>
+    </h2>
+    <h2
+      className="page-header__title "
+    >
+      Hidden expenses: 
+      <span>
+        0
+      </span>
+    </h2>
     <div
       className="page-header__actions"
     >

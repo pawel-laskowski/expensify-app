@@ -37,5 +37,24 @@ exports[`should render EditExpensePage correctly 1`] = `
       Remove Expense
     </button>
   </div>
+  <RemoveModal
+    closeModal={[Function]}
+    expense={
+      Object {
+        "amount": 45195,
+        "createdAt": 345600000,
+        "description": "Credit Card",
+        "id": "3",
+        "note": "",
+      }
+    }
+    history={
+      Object {
+        "push": [MockFunction],
+      }
+    }
+    modalIsOpen={false}
+    startRemoveExpense={[MockFunction]}
+  />
 </div>
 `;

@@ -18,7 +18,6 @@ beforeEach(() => {
         />)
 })
 
-
 test('should render EditExpensePage correctly', () => {
     expect(wrapper).toMatchSnapshot()
 })
@@ -29,8 +28,8 @@ test('should handle editExpense', () => {
     expect(startEditExpense).toHaveBeenLastCalledWith(expenses[2].id, { description: 'DONE!'})
 })
 
-test('should handle removeExpense', () => {
+
+test('should handle openModal', () => {
     wrapper.find('button').simulate('click')
-    expect(history.push).toHaveBeenLastCalledWith('/')
-    expect(startRemoveExpense).toHaveBeenLastCalledWith({ id: expenses[2].id })
+    expect(wrapper.state('modalIsOpen')).toBe(true)
 })

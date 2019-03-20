@@ -37,12 +37,9 @@ export class Header extends React.Component {
                     </div>
                 </div>
                 <LogoutModal
-                    uid={this.props.auth.uid}
                     startRemoveAllExpenses={this.props.startRemoveAllExpenses}
                     startConvertToPermanentAccount={this.props.startConvertToPermanentAccount}
-                    startLoginGoogle={this.props.startLoginGoogle}
                     startLogout={this.props.startLogout}
-                    history={this.props.history}
                     modalIsOpen={this.state.modalIsOpen}
                     closeModal={this.closeModal}
                 />
@@ -60,8 +57,7 @@ const mapStateToProps = (state, props) => {
 const mapDispatchToProps = (dispatch) => ({
     startLogout: () => dispatch(startLogout()),
     startRemoveAllExpenses: () => dispatch(startRemoveAllExpenses()),
-    startConvertToPermanentAccount: (uid) => dispatch(startConvertToPermanentAccount(uid)),
-    startLoginGoogle: () => dispatch(startLoginGoogle())
+    startConvertToPermanentAccount: () => dispatch(startConvertToPermanentAccount()),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header)

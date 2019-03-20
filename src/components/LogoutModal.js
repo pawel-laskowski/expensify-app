@@ -4,7 +4,6 @@ import Modal from 'react-modal'
 export class LogoutModal extends React.Component {
 
     onSignIn = () => {
-        console.log(this.props.uid);
         this.props.startConvertToPermanentAccount(this.props.uid)
     }
 
@@ -12,6 +11,7 @@ export class LogoutModal extends React.Component {
         this.props.startRemoveAllExpenses()
         this.props.startLogout()
     }
+    
     render() {
         return (
             <Modal

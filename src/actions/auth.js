@@ -18,16 +18,11 @@ export const startLoginAnonymous = () => {
     }       
 }
 
-export const startConvertToPermanentAccount = (uid) => {
-    console.log(uid);
-    console.log(firebase.auth.AuthCredential);
-    
-    return () => {
-        const credential = firebase.auth.GoogleAuthProvider.credential(uid)
-
-        firebase.auth().currentUser.linkAndRetrieveDataWithCredential(credential).then(function (usercred) {
-            var user = usercred.user;
-            console.log("Anonymous account successfully upgraded", user);
+export const startConvertToPermanentAccount = () => {
+    return () => {   
+        firebase.auth().currentUser.linkWithPopup(googleAuthProvider).then(function (usercred) {
+            const user = usercred.user;
+            window.location.reload()
         }, function (error) {
             console.log("Error upgrading anonymous account", error);
         });

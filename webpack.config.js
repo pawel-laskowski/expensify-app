@@ -11,7 +11,8 @@ module.exports = (env) => {
     entry: './src/app.js',
     output: {
       path: path.join(__dirname,'public', 'dist'),
-      filename: 'bundle.js'
+      filename: 'bundle.js',
+      publicPath: "/dist/"
     },
     module: {
       rules: [{
@@ -56,12 +57,8 @@ module.exports = (env) => {
     ],
     devtool: isProduction ? 'source-map' : 'inline-source-map',
     devServer: {
-      static: {
-        directory: path.join(__dirname, 'public'),
-        serveIndex: true,
-        publicPath: '/'
-      },
-      historyApiFallback: true,
+      static: path.join(__dirname, "public"),
+      historyApiFallback: true
     },
     mode: 'development'
   }

@@ -15,10 +15,5 @@ exports[`should render Header correctly 1`] = `
   >
     Create Expense
   </NavLink>
-  <NavLink
-    to="/help"
-  >
-    Help Page
-  </NavLink>
 </header>
 `;

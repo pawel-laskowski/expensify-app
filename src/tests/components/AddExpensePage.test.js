@@ -3,12 +3,12 @@ import { shallow } from 'enzyme'
 import { AddExpensePage } from '../../components/AddExpensePage'
 import expenses from '../fixtures/expenses'
 
-let addExpense, wrapper, mockedUsedNavigate
+let startAddExpense, wrapper, mockedUsedNavigate
 
 beforeEach(() => {
-  addExpense = jest.fn()
+  startAddExpense = jest.fn()
   mockedUsedNavigate = jest.fn()
-  wrapper = shallow(<AddExpensePage addExpense={addExpense} />)
+  wrapper = shallow(<AddExpensePage startAddExpense={startAddExpense} />)
 })
 
 jest.mock('react-router-dom', () => ({
@@ -23,5 +23,5 @@ test('should render AddExpensePage correctly', () => {
 test('should handle onSubmit', () => {
   wrapper.find('ExpenseForm').prop('onSubmit')(expenses[1])
   expect(mockedUsedNavigate).toHaveBeenLastCalledWith('/')
-  expect(addExpense).toHaveBeenLastCalledWith(expenses[1])
+  expect(startAddExpense).toHaveBeenLastCalledWith(expenses[1])
 })

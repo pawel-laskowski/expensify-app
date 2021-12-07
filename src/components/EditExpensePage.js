@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from "react-redux";
 import { useParams, useNavigate } from 'react-router-dom';
-import { editExpense, startRemoveExpense } from '../actions/expenses';
+import { startEditExpense, startRemoveExpense } from '../actions/expenses';
 import ExpenseForm from './ExpenseForm';
 
 export const EditExpensePage = (props) => {
@@ -9,7 +9,7 @@ export const EditExpensePage = (props) => {
   let { id } = useParams()
 
   const onSubmit = (expense) => {
-    props.editExpense(id, expense)
+    props.startEditExpense(id, expense)
     navigate('/')
   }
   const onRemove = () => {
@@ -36,7 +36,7 @@ const mapStateToProps = (state, props) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    editExpense: (id, expense) => dispatch(editExpense(id, expense)),
+    startEditExpense: (id, expense) => dispatch(startEditExpense(id, expense)),
     startRemoveExpense: ({ id }) => dispatch(startRemoveExpense({ id }))
   }
 }

@@ -5,7 +5,7 @@ import numeral from 'numeral';
 
 const ExpenseListItem = ( { description, amount, id, createdAt}) => (
   <div>
-    <Link to={`edit/${id}`}>
+    <Link to={`/edit/${id}`}>
       <h2>Description: {description}</h2>
     </Link>
     <p>

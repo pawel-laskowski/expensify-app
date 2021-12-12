@@ -6,7 +6,7 @@ exports[`should render Header correctly 1`] = `
     Expensify
   </h1>
   <NavLink
-    to="/"
+    to="/dashboard"
   >
     Dashboard
   </NavLink>
@@ -15,5 +15,10 @@ exports[`should render Header correctly 1`] = `
   >
     Create Expense
   </NavLink>
+  <button
+    onClick={[MockFunction]}
+  >
+    Logout
+  </button>
 </header>
 `;

@@ -8,13 +8,21 @@ import EditExpensePage from '../components/EditExpensePage'
 import NotFoundPage from '../components/NotFoundPage'
 import LoginPage from '../components/LoginPage'
 import PrivateRoute from './PrivateRoute'
+import PublicRoute from './PublicRoute';
 
 export const history = createBrowserHistory()
 
 const AppRouter = () => (
   <HistoryRouter history={history}>
     <Routes>
-      <Route path="/" element={<LoginPage />} />
+      <Route 
+        path="/" 
+        element={
+          <PublicRoute>
+            <LoginPage />
+          </PublicRoute>
+        } 
+      />
       <Route 
         path="/dashboard" 
         element={
@@ -33,7 +41,7 @@ const AppRouter = () => (
           </PrivateRoute>
         } 
       />
-        <Route 
+      <Route 
         path="/edit/:id"
         element={
           <PrivateRoute>
@@ -42,7 +50,7 @@ const AppRouter = () => (
           </PrivateRoute>
         } 
       />      
-        <Route path="*" element={<NotFoundPage />} />
+      <Route path="*" element={<NotFoundPage />} />
     </Routes>
   </HistoryRouter>
 )

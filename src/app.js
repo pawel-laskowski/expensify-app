@@ -11,6 +11,7 @@ import 'react-dates/initialize'
 import 'react-dates/lib/css/_datepicker.css'
 import { auth } from './firebase/firebase'
 import { onAuthStateChanged } from '@firebase/auth';
+import LoadingPage from './components/LoadingPage'
 
 const store = configureStore()
 const jsx = (
@@ -26,7 +27,7 @@ const renderApp = () => {
   }
 }
 
-ReactDOM.render(<p>Loading... </p>, document.getElementById('app'))
+ReactDOM.render(<LoadingPage />, document.getElementById('app'))
 
 onAuthStateChanged(auth, (user) => {
   if (user) {

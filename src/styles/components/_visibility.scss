@@ -1,0 +1,11 @@
+.show-for-mobile {
+  @media (min-width: $destop-breakpoint) {
+    display: none;
+  }
+}
+
+.show-for-desktop {
+  @media (max-width: $destop-breakpoint) {
+    display: none;
+  }
+}

@@ -19,11 +19,18 @@ export const EditExpensePage = (props) => {
 
   return (
     <div>
-      <ExpenseForm 
-        expense={props.expenses.find(expense => expense.id === id)}
-        onSubmit={onSubmit}
-      />
-      <button onClick={onRemove}>Remove</button>  
+      <div className="page-header">
+        <div className="content-container">
+          <h1 className="page-header__title">Edit Expense</h1>
+        </div>
+      </div>
+      <div className="content-container">
+        <ExpenseForm 
+          expense={props.expenses.find(expense => expense.id === id)}
+          onSubmit={onSubmit}
+        />
+        <button className="button button--secondary" onClick={onRemove}>Remove Expense</button>        
+      </div>
     </div>
   )
 }

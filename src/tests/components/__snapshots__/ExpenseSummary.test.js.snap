@@ -21,6 +21,10 @@ exports[`should correctly render ExpensesSummary with 1 expense 1`] = `
         $1.95
       </span>
     </h1>
+    <p>
+      2
+       hidden expenses because of filters. Remove filters to see all expenses.
+    </p>
     <div
       className="page-header__actions"
     >

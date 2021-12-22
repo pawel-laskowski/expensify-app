@@ -11,9 +11,14 @@
 }
 
 .button--link {
-  background: none
+  background: none;
 }
 
 .button--secondary {
-  background: #888
+  background: #888;
+}
+
+.button--login {
+  width: 85%;
+  margin-top: $m-size
 }

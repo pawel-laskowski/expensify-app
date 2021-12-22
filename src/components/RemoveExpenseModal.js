@@ -5,6 +5,7 @@ export const RemoveExpenseModal = (props) => (
   <Modal
     isOpen={props.modalIsOpen}
     onRequestClose={props.closeModal}
+    ariaHideApp={false}
     contentLabel="RemoveExpense"
     closeTimeoutMS={200}
     className="modal"

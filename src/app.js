@@ -31,7 +31,7 @@ ReactDOM.render(<LoadingPage />, document.getElementById('app'))
 
 onAuthStateChanged(auth, (user) => {
   if (user) {
-    store.dispatch(login(user.uid))
+    store.dispatch(login(user.uid, user.isAnonymous))
     store.dispatch(startSetExpenses()).then(() => {
       renderApp()
       if (history.location.pathname === '/') {
